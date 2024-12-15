@@ -7,9 +7,7 @@ fi
 read -p "Enter Query: " query
 
 if [[ -z $query ]]; then
-    # Handle empty query for both languages and commands
     tmux neww bash -c "curl -s cht.sh/$selected/:list | less"
-    # Prompt for query again after viewing the list
     read -p "Enter Query (or press Enter to exit): " query
     if [[ -z $query ]]; then
         exit 0
